@@ -30,6 +30,17 @@ let bushBerryColours2 = ["pink", "pink", "pink", "pink"];
 
 const util = require("util");
 
+function safeBush() {}
+
+function safeBush(bush) {
+  if (bush.every((berry) => berry === "pink")) {
+    return `Bush is safe to eat from`;
+  } else {
+    return `Toxic! Leave bush alone!`;
+  }
+}
+console.log(safeBush);
+
 function test(test_name, actual, expected) {
   let status;
   if (actual === expected) {

@@ -54,6 +54,9 @@ function checkCodeIsThere(stringText) {
   This technic is also referred as "problem decomposition". It helps you to reduce scope of the problem 
   by only focusing on a small chunk of the whole problem at a time.)
 */
+function getTransportModes(arr, string) {
+  return arr.slice(1);
+}
 
 /*
   Implement the function getTransportModes that
@@ -64,7 +67,9 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(arr, string) {
+  return arr.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +86,9 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arr, string) {
+  return arr.includes(string);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +99,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(arr) {
+  return arr[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -123,6 +132,9 @@ function getLocationName() {}
 */
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+  return locations
+    .filter((elem) => elem.slice(1).includes(transportMode))
+    .map((elem) => elem[0]);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -31,6 +31,16 @@ function test(test_name, actual, expected) {
     )} but your function returned: ${util.inspect(actual)}`;
   }
 
+  function findSafeOxygenLevel(arr) {
+    const convert = arr.map((percentage) => {
+      return parseFloat(percentage);
+    });
+    const o2 = convert.find((percentage) => {
+      return percentage > 19.5 && percentage < 23.5;
+    });
+    return `${o2}%`;
+  }
+
   console.log(`${test_name}: ${status}`);
 }
 
@@ -39,3 +49,5 @@ test("safeLevels function works - case 1", safeLevels(oxygenLevels1), "19.9%");
 test("safeLevels function works - case 2", safeLevels(oxygenLevels2), "20.2%");
 
 test("safeLevels function works - case 3", safeLevels(oxygenLevels3), "21.1%");
+
+
